@@ -7,6 +7,7 @@ export default class MaskedInput extends React.Component {
   constructor(...args) {
     super(...args)
 
+    this.onBlur = this.onBlur.bind(this)
     this.onChange = this.onChange.bind(this)
   }
 
@@ -37,12 +38,14 @@ export default class MaskedInput extends React.Component {
     delete props.placeholderChar
     delete props.keepCharPositions
     delete props.value
+    delete props.onBlur
     delete props.onChange
     delete props.showMask
 
     return (
       <input
         {...props}
+        onBlur={this.onBlur}
         onChange={this.onChange}
         defaultValue={this.props.value}
         ref={(inputElement) => (this.inputElement = inputElement)}
@@ -55,6 +58,12 @@ export default class MaskedInput extends React.Component {
 
     if (typeof this.props.onChange === 'function') {
       this.props.onChange(event)
+    }
+  }
+
+  onBlur(event) {
+    if (typeof this.props.onBlur === 'function') {
+      this.props.onBlur(event)
     }
   }
 }

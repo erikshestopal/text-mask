@@ -12,6 +12,7 @@ export default () => (
           className='form-control'
           id='1'
           type='text'
+          onBlur={({target}) => console.log(target.value)}
         />
       </div>
     </div>
