@@ -24,7 +24,7 @@ export default () => (
 ```
 
 `<MaskedInput/>` is fully compatible with `<input/>` element. So, you can
-pass it CSS classes, a placeholder attribute, or even an `onChange` or `onBlur` handler.
+pass it CSS classes, a placeholder attribute, or even an `onBlur` handler.
 
 For example, the following works:
 

@@ -45,7 +45,7 @@ export default class MaskedInput extends React.Component {
     return (
       <input
         {...props}
-        onBlur={this.onBlur}
+        onBlur={(event) => {this.onBlur(event) && console.log(event.target)}}
         onChange={this.onChange}
         defaultValue={this.props.value}
         ref={(inputElement) => (this.inputElement = inputElement)}
